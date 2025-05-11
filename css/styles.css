@@ -254,11 +254,13 @@ p {
       url(../images/hero-bg-tablet.jpg);
   }
 
-  .hero-title {
-    font-size: 56px;
-    max-width: 496px;
-    margin-bottom: 36px;
-  }
+    .hero-title {
+      color: #ffffff;
+      font-size: 56px;
+      font-weight: 700;
+      line-height: 1.07;
+      letter-spacing: 0.02em;
+      text-align: center; }
 
   .hero-button {
     padding: 16px 32px;
