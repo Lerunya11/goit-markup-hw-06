@@ -34,7 +34,6 @@
   border: 0;
 }
 
-
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
@@ -43,23 +42,16 @@ body {
 }
 
 
-
-
 img {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-
-
-
 a {
   text-decoration: none;
   color: inherit;
 }
-
-
 
 
 ul {
@@ -68,9 +60,6 @@ ul {
   padding: 0;
 }
 
-
-
-
 h1,
 h2,
 h3,
@@ -78,20 +67,23 @@ p {
   margin: 0;
 }
 
-
-
-
 /* #region Container */
 .container {
-  max-width: 1158px;
-  padding: 0 15px;
+  padding: 0 16px;
   margin: 0 auto;
 }
 
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
 
-.header-container {
-  display: flex;
-  align-items: center;
+@media screen and (min-width: 1158px) {
+  .container {
+    max-width: 1158px;
+    padding: 0 15px;
+  }
 }
 
 
@@ -1119,11 +1111,80 @@ border: none;
 }
 
 /* --------------------------------------------------------------------- */
-/* #endregion Modal Window */
+
 
 /* Mobile First адаптивная верстка */
 
 /* --- Mobile (до 768px) --- */
+.menu-toggle {
+  display: block;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  line-height: 0;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--white);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translateX(100%);
+  transition: transform 250ms ease-in-out;
+  z-index: 999;
+}
+
+.mobile-menu.is-open {
+  transform: translateX(0);
+}
+
+.mobile-menu-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-menu-close-icon {
+  stroke: var(--navy-blue);
+  width: 24px;
+  height: 24px;
+}
+
+.mobile-menu-list,
+.mobile-contacts-list,
+.mobile-socials {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.mobile-menu-link,
+.mobile-contact-tel,
+.mobile-contact-email {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--navy-blue);
+  text-decoration: none;
+}
+
+.mobile-socials {
+  flex-direction: row;
+  gap: 40px;
+  justify-content: center;
+}
 .container {
   max-width: 100%;
   padding: 0 16px;
@@ -1262,5 +1323,14 @@ screen and (min-resolution: 2dppx) {
   .hero-section {
     background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
       url("../images/hero-bg@2x.jpg");
+  }
+}
+@media screen and (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: none;
   }
 }
