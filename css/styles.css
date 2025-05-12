@@ -617,9 +617,15 @@ p {
 
 .footer-container {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  gap: 72px;
+  gap: 72px 24px;
+  text-align: center;
+}
+
+.footer-input {
+  width: 288px;
 }
 
 
@@ -1158,7 +1164,6 @@ border: none;
   fill: #f4f4fd;
 }
 
-/* --------------------------------------------------------------------- */
 
 
 /* Mobile First адаптивная верстка */
@@ -1277,8 +1282,9 @@ border: none;
 /* --- Tablet (768px ≤ ширина < 1158px) --- */
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 768px;
-    padding: 0 16px;
+    max-width: 584px;
+    padding-left: 108px;
+    padding-right: 108px;
   }
 
   .features-list,
@@ -1300,12 +1306,13 @@ border: none;
     flex-basis: calc((100% - 24px) / 2);
   }
 
-  .footer-container {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
+    .footer-container {
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 72px 24px;
+      text-align: left;
+    }
 
   .footer-logo-block {
     margin-right: 24px;
