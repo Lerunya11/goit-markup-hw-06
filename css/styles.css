@@ -75,6 +75,12 @@ p {
         margin: 0 auto;
 }
 
+@media (max-width: 767px) {
+        .team-section .container {
+                max-width: 552px;
+        }
+}
+
 @media screen and (min-width: 768px) {
         .container {
                 max-width: 768px;
@@ -95,6 +101,10 @@ p {
         border-bottom: 1px solid var(--cornflower);
         box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
                 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+}
+
+.header-container {
+        display: flex;
 }
 
 
@@ -183,6 +193,8 @@ p {
 .contact-block {
         font-style: normal;
         margin-left: auto;
+        display: flex;
+        align-items: center;
 }
 
 
@@ -230,6 +242,18 @@ p {
         line-height: 1.11;
         max-width: 220px;
         margin: 0 auto 72px;
+
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 56px;
+        
+        text-align: center;
+        letter-spacing: 0.02em;
+
+        color: #FFFFFF;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        max-width: 496px;
 }
 
 .hero-button {
@@ -263,6 +287,11 @@ p {
                 line-height: 1.07;
                 letter-spacing: 0.02em;
                 text-align: center;
+
+                width:100%;
+                font-size: 56px;
+                letter-spacing: 0.02em;
+                
         }
 
         .hero-button {
@@ -313,10 +342,38 @@ p {
 }
 
 .features-text {
-        text-align: center;
+        text-align: left;
         font-weight: 500;
         font-size: 16px;
         line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+
+        /* Effective Solutions for Your Business */
+        .hero-title {
+
+                font-weight: 700;
+                font-size: 42px;
+                line-height: 40px;
+                letter-spacing: 0.02em;
+                
+        }
+
+
+
+}
+
+@media (max-width: 520px) {
+        /* Effective Solutions for Your Business */
+        .hero-title {
+                font-size: 36px;
+                max-width: 400px;
+
+        }
+               
+        
+                
 }
 
 @media screen and (min-width: 1158px) {
@@ -384,6 +441,8 @@ p {
         font-size: 20px;
         font-weight: 500;
         line-height: 1.2;
+
+
 }
 
 .features-text {
@@ -1289,13 +1348,87 @@ p {
         align-self: center;
 }
 
+@media screen and (max-width: 767px) {
+        .features-text {
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: 0.02em;
+        }
+
+        .features-icon-container {
+                display:none;
+        }
+
+        .features-item {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0px;
+                gap: 8px;
+        
+                border: 1px solid #000000;
+
+                flex-grow: 1;
+                max-width: 345px;
+                width: 100%;
+                flex: 2 2 288px;
+
+                margin-right: 24px;
+        }
+
+        .features-list {
+                flex-direction: row;
+                flex-wrap: wrap;
+
+                gap:0;
+        }
+
+        .features-item:nth-child(1), .features-item:nth-child(2) {
+                margin-bottom: 72px;
+        }
+
+        .features-item:nth-child(2), .features-item:nth-child(4) {
+                margin-right: 0;
+        }
+
+        .features-title {
+                margin-bottom: 8px;
+
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 36px;
+                line-height: 40px;
+                /* identical to box height, or 111% */
+                letter-spacing: 0.02em;
+                color: #2E2F42;
+        }
+}
+
+@media screen and (max-width: 632px) {
+        .features-item {
+                width:100%;
+                max-width: none;
+
+                margin-bottom: 72px;
+                margin-right: 0;
+        }
+
+        .features-item:last-child{
+                margin-bottom: 0;
+        }
+}
+
 /* --- Tablet (768px ≤ ширина < 1158px) --- */
 @media screen and (min-width: 768px) {
-        .container {
+        /*.container {
                 max-width: 584px;
                 padding-left: 108px;
                 padding-right: 108px;
-        }
+        }*/
 
         .features-list,
         .team-list {
@@ -1305,8 +1438,16 @@ p {
         }
 
         .features-item {
-                flex-basis: calc((100% - 24px) / 2);
+                flex-basis: calc((100% - 100px) / 2);
+                display:flex;
+                flex-direction: column;
+                align-items: center;
         }
+
+        .features-text {
+                text-align: center;
+        }
+        
 
         .team-card {
                 flex-basis: calc((100% - 24px) / 2);
@@ -1352,8 +1493,13 @@ p {
                 gap: 24px;
         }
 
+        .features-text {
+                text-align: left;     
+        }
+
         .features-item {
                 flex-basis: calc((100% - 72px) / 4);
+                align-items: flex-start;
         }
 
         .team-card {
@@ -1384,6 +1530,19 @@ p {
 
 /* === Retina background images === */
 
+@media (max-width:846px) {
+        .contacts-list {
+                flex-direction:column;
+                align-content: center;
+                gap: 0;
+                margin: 15px 0;
+        }
+
+        .contacts-list li:first-child {
+                margin-bottom: 12px;
+        }
+}
+
 /* Mobile Retina */
 @media screen and (max-width: 767px) and (min-resolution: 192dpi),
 screen and (max-width: 767px) and (min-resolution: 2dppx) {
@@ -1392,6 +1551,36 @@ screen and (max-width: 767px) and (min-resolution: 2dppx) {
                                 rgba(46, 47, 66, 0.7)),
                         url("../images/hero-bg-mobile@2x.jpg");
         }
+
+        .features-text {
+               
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: 0.02em;
+
+                color: #434455;
+        }
+
+        .features-title {
+                
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 36px;
+                line-height: 40px;
+                text-align: center;
+                letter-spacing: 0.02em;
+        
+                color: #2E2F42;
+                
+        }
+
+                .team-card picture {
+                        display: flex;
+                        justify-content: center;
+                }
+
 }
 
 /* Tablet Retina */
@@ -1402,6 +1591,11 @@ screen and (min-width: 768px) and (max-width: 1157px) and (min-resolution: 2dppx
                                 rgba(46, 47, 66, 0.7)),
                         url("../images/hero-bg-tablet@2x.jpg");
         }
+
+                .team-card picture {
+                        display: flex;
+                        justify-content: center;
+                }
 }
 
 /* Desktop Retina */
@@ -1411,4 +1605,5 @@ screen and (min-width: 1158px) and (min-resolution: 2dppx) {
                 background-image: linear-gradient(rgba(46, 47, 66, 0.7),
                                 rgba(46, 47, 66, 0.7)),
                         url("../images/hero-bg@2x.jpg");
-        }     }
+        }     
+}
