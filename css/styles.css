@@ -125,7 +125,7 @@ p {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 24px 0;
+        /* padding: 24px 0; */
 }
 
 
@@ -379,10 +379,14 @@ p {
         /* Effective Solutions for Your Business */
         .hero-title {
                 font-size: 36px;
-                max-width: 400px;
+                max-width: 216px;
 
         }
                
+       
+        .modal {
+                width: 288px;
+        }
         
                 
 }
@@ -436,7 +440,7 @@ p {
         width: calc((100% - 72px) / 4);
 }
 
-.features-icon-container {
+/* .features-icon-container {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -445,14 +449,13 @@ p {
         width: 264px;
         height: 112px;
         margin-bottom: 8px;
-        border: 1px solid #8e8f99;
-}
+} */
 
 .features-title {
         font-size: 20px;
         font-weight: 500;
         line-height: 1.2;
-
+        align-self: center;
 
 }
 
@@ -1293,10 +1296,11 @@ p {
 
 .mobile-social-icon {
         background-color: var(--iris);
-        border-radius: 50%;
-        width:40px;
-        height:40px;
+}
 
+.mobile-social-list li {
+        width: 40px;
+        height: 40px;
 }
 
 .mobile-menu-close-btn {
@@ -1338,6 +1342,18 @@ p {
         flex-direction: row;
         gap: 40px;
         justify-content: center;
+}
+
+.mobile-social-link {
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background-color: var(--iris);
 }
 
 .container {
@@ -1415,7 +1431,6 @@ p {
                 padding: 0px;
                 gap: 8px;
         
-                border: 1px solid #000000;
 
                 flex-grow: 1;
                 max-width: 345px;
@@ -1452,6 +1467,10 @@ p {
                 letter-spacing: 0.02em;
                 color: #2E2F42;
         }
+
+        .contact-block {
+                display: none;
+        }
 }
 
 @media screen and (max-width: 632px) {
@@ -1484,10 +1503,9 @@ p {
         }
 
         .features-item {
-                flex-basis: calc((100% - 100px) / 2);
+                flex-basis: calc((100% - 24px) / 2);
                 display:flex;
                 flex-direction: column;
-                align-items: center;
         }
 
         .features-text {
@@ -1619,7 +1637,7 @@ screen and (max-width: 767px) and (min-resolution: 2dppx) {
                 text-align: center;
                 letter-spacing: 0.02em;
         
-                color: #2E2F42;
+                color: #2E2F42;  
                 
         }
 
@@ -1766,10 +1784,19 @@ screen and (min-width: 1158px) and (min-resolution: 2dppx) {
 .mobile-menu .mobile-address-list {
         font-size: 36px;
         color: var(--navy-blue);
+        font-weight:700;
 }
 
+.mobile-nav-link.current {
+        color: var(--iris);
+}
 .mobile-menu .mobile-address-link {
         font-size: 20px;
+}
+
+.mobile-address {
+        margin-bottom: 48px;
+        font-style: normal;
 }
 
 /* Медиа-запросы для скрытия бургер-кнопки на планшетах и десктопах */
@@ -1787,4 +1814,87 @@ screen and (min-width: 1158px) and (min-resolution: 2dppx) {
         .nav-list {
                 display: none;
         }
+}
+
+
+@media (min-width: 1157px) {
+        .features-icon-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 4px;
+                width: 264px;
+                height: 112px;
+                margin-bottom: 8px;
+        }   }
+
+
+@media screen and (min-width: 768px) {
+
+        .features-list,
+        .team-list {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 72px 24px;
+        }
+}
+
+.features-title {
+        text-align: left;
+}
+
+.features-text {
+        text-align: left;
+}
+
+@media (max-width: 520px) {
+
+        .modal {
+                width: 288px;
+        }
+
+
+}
+
+.mobile-nav {
+        margin-bottom: auto;
+}
+
+@media (max-width: 1157px) and (min-width: 768px) {
+        .features-title {
+                align-self: flex-start;
+        }
+}
+
+@media (max-width: 1157px) {
+        .footer-container {
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                width: 584px;
+        }
+}
+
+.nav-link {
+        display: block;     }
+
+                @media (max-width: 1157px) {
+                        .team-section .container {
+                                max-width: 552px;
+                        }
+                }
+        
+                @media (min-width: 1158px) {
+                        .footer-container {
+                                gap: unset;
+                        }             }
+
+@media (max-width: 768px) {
+        .nav {
+                        padding: 16px 0;          
+        }
+}
+
+
+.mobile-address-link.tel {
+        color: var(--iris);
 }
